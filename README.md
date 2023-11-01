@@ -1,12 +1,13 @@
 # Test-Orderfaz
 
-Proyek aplikasi web yang memungkinkan pengguna untuk mencari informasi detail negara.
+Proyek aplikasi web yang memungkinkan pengguna untuk mencari informasi detail negara.\
+**Demo:** https://test-orderfaz-one.vercel.app
 
 ## Feature
 
-- **Pencarian Negara**
-- **Responsive Web Design**
-- **Skeleton Loading**
+- Pencarian Negara
+- Responsive Web Design
+- Skeleton Loading
 
 ## Stack
 
