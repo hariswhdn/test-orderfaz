@@ -270,7 +270,6 @@ main.detail > div > div:last-child > div > div {
   display: flex;
   flex-direction: column;
   position: relative;
-  z-index: 1;
 }
 
 main.detail > div > div:last-child > div > div > ul {
@@ -348,6 +347,7 @@ main.detail > div > div:last-child > div > div > div:last-child > div > ul {
   position: absolute;
   top: 100%;
   left: 0;
+  z-index: 1;
   color: #fff;
   font-size: 14px;
   line-height: 20px;
@@ -387,6 +387,7 @@ main.detail > div > div:last-child > div > ul {
   display: flex;
   flex-direction: column;
   row-gap: 2px;
+  position: relative;
 }
 
 main.detail > div > div:last-child > div > ul > li > p > span {
@@ -399,7 +400,6 @@ main.detail > div > div:last-child > div > .material-icons {
   position: absolute;
   top: 0;
   right: -20px;
-  z-index: 0;
   color: rgba(0, 0, 0, 0.0375);
   font-size: 240px;
   overflow: hidden;

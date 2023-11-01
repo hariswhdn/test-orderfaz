@@ -4,6 +4,7 @@ import { useDispatch, useSelector } from 'react-redux'
 import { fetchCountry, countrySlice } from '../stores/countrySlice'
 import { fetchCurrencies, currencySlice } from '../stores/currencySlice'
 import { SkeletonDetail1, SkeletonDetail2 } from '../components/Skeleton'
+import icon from '../../public/vite.svg'
 
 function Detail() {
   const navigate = useNavigate()
@@ -27,6 +28,9 @@ function Detail() {
       setInit(false)
       setObjCountry({})
       setArrCurrencies([])
+      console.log('country', country)
+      document.title = 'Pencarian Negara'
+      document.querySelector('link[rel="icon"]').setAttribute('href', icon)
     }
   }, [])
 
@@ -40,6 +44,10 @@ function Detail() {
   useEffect(() => {
     if (Object.keys(country).length > 0) {
       console.log('country', country)
+      document.title = country?.name?.common || 'Pencarian Negara'
+      document
+        .querySelector('link[rel="icon"]')
+        .setAttribute('href', country?.flags?.svg)
       setObjCountry(country)
       dispatch(
         fetchCurrencies(Object.keys(country?.currencies)?.[0]?.toLowerCase())
@@ -84,6 +92,7 @@ function Detail() {
           {Object.keys(objCountry).length > 0 ? (
             <>
               <div>
+                <span className="material-icons">public</span>
                 <div>
                   <p>LatLong</p>
                   <p>
@@ -92,9 +101,9 @@ function Detail() {
                       ?.join(', ')}
                   </p>
                 </div>
-                <span className="material-icons">public</span>
               </div>
               <div>
+                <span className="material-icons">map</span>
                 <ul>
                   <li>
                     <p>
@@ -113,9 +122,9 @@ function Detail() {
                     </p>
                   </li>
                 </ul>
-                <span className="material-icons">map</span>
               </div>
               <div>
+                <span className="material-icons">call</span>
                 <div>
                   <p>Calling Code</p>
                   <ul className="scrollbar_hide">
@@ -143,10 +152,10 @@ function Detail() {
                     <p>&nbsp;{`is in ${objCountry?.name?.common}`}</p>
                   </div>
                 </div>
-                <span className="material-icons">call</span>
               </div>
               {arrCurrencies.length > 0 ? (
                 <div>
+                  <span className="material-icons">paid</span>
                   <div>
                     <p>Currency</p>
                     <p>{Object.keys(objCountry?.currencies)?.[0]}</p>
@@ -178,7 +187,6 @@ function Detail() {
                       <p>&nbsp;with this currency</p>
                     </div>
                   </div>
-                  <span className="material-icons">paid</span>
                 </div>
               ) : (
                 <SkeletonDetail2 />
