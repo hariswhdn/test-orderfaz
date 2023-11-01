@@ -4,7 +4,7 @@ import { useDispatch, useSelector } from 'react-redux'
 import { fetchCountry, countrySlice } from '../stores/countrySlice'
 import { fetchCurrencies, currencySlice } from '../stores/currencySlice'
 import { SkeletonDetail1, SkeletonDetail2 } from '../components/Skeleton'
-import icon from '../../public/vite.svg'
+import icon from '/public/vite.svg'
 
 function Detail() {
   const navigate = useNavigate()
@@ -29,7 +29,7 @@ function Detail() {
       setObjCountry({})
       setArrCurrencies([])
       console.log('country', country)
-      document.title = 'Pencarian Negara'
+      document.title = 'Test-Orderfaz'
       document.querySelector('link[rel="icon"]').setAttribute('href', icon)
     }
   }, [])
@@ -44,7 +44,7 @@ function Detail() {
   useEffect(() => {
     if (Object.keys(country).length > 0) {
       console.log('country', country)
-      document.title = country?.name?.common || 'Pencarian Negara'
+      document.title = country?.name?.common || 'Test-Orderfaz'
       document
         .querySelector('link[rel="icon"]')
         .setAttribute('href', country?.flags?.svg)
