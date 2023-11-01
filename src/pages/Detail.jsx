@@ -4,7 +4,7 @@ import { useDispatch, useSelector } from 'react-redux'
 import { fetchCountry, countrySlice } from '../stores/countrySlice'
 import { fetchCurrencies, currencySlice } from '../stores/currencySlice'
 import { SkeletonDetail1, SkeletonDetail2 } from '../components/Skeleton'
-import icon from '/public/vite.svg'
+import icon from '/vite.svg'
 
 function Detail() {
   const navigate = useNavigate()
